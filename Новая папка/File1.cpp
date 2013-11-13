@@ -106,17 +106,23 @@ void infoBook(Book *books, int n, int *ta, int priceControl)  //Информация о кни
 Void zA(Book *books, int n)
 {int i,k;
 string buf;
-cout << "     Author   " << "      Name  " << endl;
-for (i=0; i < n; i++){
-k=0
-buf=books[i].aname
-for (i=0; i < n; i++) {
-if (books[i].aname==buf && k<3) {
-k=k+1;
-if (k=3) {
-cout << setw(10) << books[i].aname << endl}
-}
+bool flag;
+flag=false;
 
+for (i=0; i < n; i++){
+	k=0
+	buf=books[i].aname
+	for (i=0; i < n; i++) {
+	if (books[i].aname==buf && k<3) {
+		k=k+1;
+		if (k=3){ if (flag==false) 	{
+			cout << "     Author   " << "      Name  " << endl;
+			flag=true;			}
+			cout << setw(10) << books[i].aname << endl;}
+							}
+if (flag==false) 	{
+	cout << "    net avtora s kolihistvom knig bolie 3  " << endl;
+					}
 }
 }
 
