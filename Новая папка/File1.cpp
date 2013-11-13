@@ -5,36 +5,36 @@
 
 using namespace std;
 
-struct Book  //Структура
+struct Book  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
-  string aname;  //Фамилия автора
-  string bname;  //Название книги
-  int year;      //Год издания
-  int price;     //Цена
-  int amount;    //Количество
+  string aname;  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+  string bname;  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+  int year;      //пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+  int price;     //пїЅпїЅпїЅпїЅ
+  int amount;    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 };
 
 
-void printBook(Book *books, int n);  //Вывод список книг на экран
-void totalAmount(Book *books, int n, int *ta);  //Нахождение общей стоимости каждой книги
-void infoBook(Book *books, int n, int *ta,int priceControl);  //Информация о книге заданной цены
+void printBook(Book *books, int n);  //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+void totalAmount(Book *books, int n, int *ta);  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+void infoBook(Book *books, int n, int *ta,int priceControl);  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 void main()
 {
-  int n;  //Количество книг
-  int *ta;  //Общая стоимость
-  int priceControl; //Контрольная цена книги
+  int n;  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+  int *ta;  //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+  int priceControl; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
   cout << " Enter books amount:   ";
   cin >> n;
 
-  Book *books;  //Указатель на структуру
+  Book *books;  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
   books = new Book[n];
-  ta = new int[n];   //Массив общей стоимости
+  ta = new int[n];   //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-  ifstream in;  //Поток для чтения
-  in.open("Books.txt");  //Открываем файл для чтения
+  ifstream in;  //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+  in.open("Books.txt");  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
-  for(int i = 0; i < n; i++)  //Читаем из фалйа
+  for(int i = 0; i < n; i++)  //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
   {
 	in >> books[i].aname;
 	in >> books[i].bname;
@@ -44,7 +44,7 @@ void main()
   }
 
 
-  in.close();  //Закрываем поток
+  in.close();  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
   cout << "List of books:" << endl;
   printBook(books, n);
@@ -59,13 +59,13 @@ void main()
   cout << "Control price book info:";
   infoBook(books, n, ta,priceControl);
 
-  delete[] books;  //Освобождаем память
+  delete[] books;  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
   system("pause");
 }
 
 
-void printBook(Book *books, int n)  //Вывод результатов тестов на экран
+void printBook(Book *books, int n)  //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 {
   cout<<"     Author   "<<"      Name  "<<"  Year  "<<"  Price  "<<"  Amount  "<< endl;
 
@@ -77,7 +77,7 @@ void printBook(Book *books, int n)  //Вывод результатов тестов на экран
 }
 
 
-void totalAmount(Book *books, int n, int *ta)  //Нахождение общей стоимости каждой книги
+void totalAmount(Book *books, int n, int *ta)  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 {
   for(int i = 0; i < n; i++)
   {
@@ -91,7 +91,7 @@ void totalAmount(Book *books, int n, int *ta)  //Нахождение общей стоимости кажд
 }
 
 
-void infoBook(Book *books, int n, int *ta, int priceControl)  //Информация о книге заданной цены
+void infoBook(Book *books, int n, int *ta, int priceControl)  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 {
   cout << "     Author   " << "      Name  " << "  Year  " << "  Amount  " << "   Total price  " << endl;
   for (int i; i < n; i++)
@@ -110,8 +110,8 @@ bool flag;
 flag=false;
 
 for (i=0; i < n; i++){
-	k=0
-	buf=books[i].aname
+	k=0;
+	buf=books[i].aname;
 	for (i=0; i < n; i++) {
 	if (books[i].aname==buf && k<3) {
 		k=k+1;
